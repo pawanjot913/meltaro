@@ -3,6 +3,15 @@ import { createClient, SupabaseClient } from '@supabase/supabase-js';
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL as string | undefined;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined;
 
+if (typeof window !== 'undefined') {
+  console.debug('Supabase runtime config', {
+    supabaseUrl,
+    supabaseAnonKey: supabaseAnonKey ? `${supabaseAnonKey.slice(0, 10)}...` : null,
+    isSupabaseConfigured:
+      Boolean(supabaseUrl && supabaseAnonKey && !supabaseUrl.includes('your-project') && supabaseAnonKey !== 'your-anon-key'),
+  });
+}
+
 export const isSupabaseConfigured = Boolean(
   supabaseUrl &&
     supabaseAnonKey &&
