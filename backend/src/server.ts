@@ -78,7 +78,8 @@ app.use(
   cors({
     origin: (origin, callback) => {
       if (!origin) return callback(null, true); // allow server-to-server (Postman, curl)
-      if (corsOrigins.includes(origin)) return callback(null, true);
+      const normalizedOrigin = origin.replace(/\/+$/, '');
+      if (corsOrigins.includes(normalizedOrigin)) return callback(null, true);
       // Dev convenience: Vite may fall back to 5174+ when 5173 is busy
       if (!isProd && /^http:\/\/(localhost|127\.0\.0\.1):\d+$/.test(origin)) {
         return callback(null, true);
