@@ -4,4 +4,4 @@
   publish = "dist"
 
 [context.production.environment]
-  VITE_API_URL = "https://your-backend-domain.com"
+  VITE_API_URL = "https://meltaro.onrender.com"
