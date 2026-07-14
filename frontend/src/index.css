@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+
+  --color-primary: #023625;
+  --color-primary-container: #1f4d3a;
+  --color-tertiary-fixed-dim: #e7c17a;
+  --color-tertiary: #3f2c00;
+  --color-surface: #fff8f5;
+  --color-surface-dim: #e1d8d4;
+  --color-on-surface-variant: #414944;
+  --color-inverse-primary: #a1d1b8;
+  --color-on-secondary: #ffffff;
+  --color-secondary: #615e55;
+  --color-surface-container: #f5ece7;
+  --color-error-container: #ffdad6;
+  --color-on-tertiary-fixed-variant: #5c4304;
+  --color-on-primary: #ffffff;
+  --color-on-secondary-fixed: #1d1c15;
+  --color-on-error-container: #93000a;
+  --color-on-error: #ffffff;
+  --color-tertiary-container: #5a4103;
+  --color-on-tertiary: #ffffff;
+  --color-primary-fixed: #bceed3;
+  --color-outline: #717973;
+  --color-inverse-on-surface: #f8efea;
+  --color-primary-fixed-dim: #a1d1b8;
+  --color-on-surface: #1e1b18;
+  --color-surface-variant: #e9e1dc;
+  --color-on-primary-container: #8dbda4;
+  --color-secondary-fixed: #e7e2d6;
+  --color-surface-container-high: #efe6e2;
+  --color-surface-container-highest: #e9e1dc;
+  --color-on-secondary-fixed-variant: #49473e;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-tint: #3a6753;
+  --color-secondary-container: #e7e2d6;
+  --color-on-primary-fixed: #002114;
+  --color-secondary-fixed-dim: #cac6bb;
+  --color-tertiary-fixed: #ffdea3;
+  --color-background: #fff8f5;
+  --color-on-secondary-container: #67645b;
+  --color-surface-container-low: #fbf2ed;
+  --color-inverse-surface: #34302c;
+  --color-on-background: #1e1b18;
+  --color-on-tertiary-container: #d2ae68;
+  --color-error: #ba1a1a;
+  --color-on-tertiary-fixed: #261900;
+  --color-outline-variant: #c0c9c2;
+  --color-surface-bright: #fff8f5;
+  --color-on-primary-fixed-variant: #214f3c;
+}
+
+@layer utilities {
+  .glass-card {
+    background: rgba(255, 248, 245, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(231, 193, 122, 0.25);
+  }
+
+  .forest-gradient {
+    background: linear-gradient(135deg, #023625 0%, #1f4d3a 100%);
+  }
+
+  .lush-gradient {
+    background: linear-gradient(135deg, #023625 0%, #1f4d3a 100%);
+  }
+  
+  .luxury-shadow {
+    box-shadow: 0px 20px 40px rgba(31, 77, 58, 0.08);
+  }
+
+  /* Hide default scrollbars but allow scrolling */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Float Animation */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(1deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
