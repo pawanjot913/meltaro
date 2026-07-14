@@ -144,7 +144,12 @@ app.use(
 /* ------------------------------------------------------------------ */
 
 app.get('/health', (_req, res) => {
-  res.json({ status: 'ok', env: env.NODE_ENV, timestamp: new Date().toISOString() });
+  res.json({
+    status: 'ok',
+    env: env.NODE_ENV,
+    timestamp: new Date().toISOString(),
+    corsOrigins,
+  });
 });
 
 /* ------------------------------------------------------------------ */
