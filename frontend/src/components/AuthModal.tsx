@@ -52,9 +52,14 @@ export default function AuthModal({ isOpen, onClose, onSuccess }: AuthModalProps
       setPassword('');
       setFullName('');
     } catch (err: unknown) {
+      console.error('Auth sign-in/up error:', err);
       const message =
-        err instanceof Error ? err.message : 'Something went wrong. Please try again.';
-      setError(message);
+        err instanceof Error
+          ? err.message
+          : typeof err === 'object' && err !== null && 'message' in err
+          ? String((err as any).message)
+          : 'Something went wrong. Please try again.';
+      setError(message || 'Something went wrong. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
