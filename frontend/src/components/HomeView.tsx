@@ -101,8 +101,8 @@ export default function HomeView({ setTab, bestSellers, onAddToBasket }: HomeVie
       </div>
 
       {/* Featured Categories Bento Box */}
-      <div className="max-w-7xl mx-auto px-6 -mt-16 relative z-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-12">
+      <div className="max-w-7xl mx-auto px-6 -mt-12 md:-mt-16 relative z-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-24 md:pt-12">
           {categories.length === 0 ? (
             <div className="col-span-full flex items-center justify-center h-48">
               <Loader2 className="w-6 h-6 text-white animate-spin" />
