@@ -36,7 +36,7 @@ export default function HomeView({ setTab, bestSellers, onAddToBasket }: HomeVie
     <div className="font-sans text-on-background bg-background pb-12">
       
       {/* Hero Section */}
-      <div className="relative h-[640px] flex items-center justify-center overflow-hidden">
+      <div className="relative h-[640px] flex items-center justify-center overflow-hidden pt-16">
         {/* Background Image with Dark Nature Overlay */}
         <div className="absolute inset-0 z-0">
           {content && (
@@ -102,7 +102,7 @@ export default function HomeView({ setTab, bestSellers, onAddToBasket }: HomeVie
 
       {/* Featured Categories Bento Box */}
       <div className="max-w-7xl mx-auto px-6 -mt-16 relative z-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-12">
           {categories.length === 0 ? (
             <div className="col-span-full flex items-center justify-center h-48">
               <Loader2 className="w-6 h-6 text-white animate-spin" />
